@@ -12,5 +12,5 @@ interface DeviceHijackingDetector
      *
      * @return string|null a message if an hijacking is detected, null otherwise
      */
-    public function detect(Device $device, ?Model $user);
+    public function detect(Device $device, ?Model $user): ?string;
 }

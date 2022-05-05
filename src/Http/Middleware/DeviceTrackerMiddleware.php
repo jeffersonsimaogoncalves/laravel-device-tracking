@@ -11,15 +11,15 @@ class DeviceTrackerMiddleware
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure $next
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
         if (Auth::guard('web')->check()) {
 
-            /** @var LaravelDeviceTracking */
+            /** @var \IvanoMatteo\LaravelDeviceTracking\LaravelDeviceTracking */
             $ldt = App::make('laravel-device-tracking');
 
             if ($ldt->checkSessionDeviceHash() === false) {

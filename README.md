@@ -1,11 +1,11 @@
 # A library that allows you to track different devices used per user
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/ivanomatteo/laravel-device-tracking.svg?style=flat-square)](https://packagist.org/packages/ivanomatteo/laravel-device-tracking)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersonsimaogoncalves/laravel-device-tracking.svg?style=flat-square)](https://packagist.org/packages/jeffersonsimaogoncalves/laravel-device-tracking)
 
-<!-- [![Build Status](https://img.shields.io/travis/ivanomatteo/laravel-device-tracking/master.svg?style=flat-square)](https://travis-ci.org/ivanomatteo/laravel-device-tracking)
-[![Quality Score](https://img.shields.io/scrutinizer/g/ivanomatteo/laravel-device-tracking.svg?style=flat-square)](https://scrutinizer-ci.com/g/ivanomatteo/laravel-device-tracking)
+<!-- [![Build Status](https://img.shields.io/travis/jeffersonsimaogoncalves/laravel-device-tracking/master.svg?style=flat-square)](https://travis-ci.org/jeffersonsimaogoncalves/laravel-device-tracking)
+[![Quality Score](https://img.shields.io/scrutinizer/g/jeffersonsimaogoncalves/laravel-device-tracking.svg?style=flat-square)](https://scrutinizer-ci.com/g/jeffersonsimaogoncalves/laravel-device-tracking)
  -->
-[![Total Downloads](https://img.shields.io/packagist/dt/ivanomatteo/laravel-device-tracking.svg?style=flat-square)](https://packagist.org/packages/ivanomatteo/laravel-device-tracking)
+[![Total Downloads](https://img.shields.io/packagist/dt/jeffersonsimaogoncalves/laravel-device-tracking.svg?style=flat-square)](https://packagist.org/packages/jeffersonsimaogoncalves/laravel-device-tracking)
 
 
 This package implements a "google like" device detection.
@@ -15,23 +15,21 @@ You can detect when a user is using a new device and manage the verified status 
 You can also detect a possible device hijacking.
 
 
-
 ## Installation
 
 You can install the package via composer:
 
 ```bash
+composer require jeffersonsimaogoncalves/laravel-device-tracking
+```
 
-composer require ivanomatteo/laravel-device-tracking
-
+```bash
 php artisan migrate
-
 ```
 
 Publish config file:
 
 ```bash
-
 php artisan vendor:publish --provider "IvanoMatteo\LaravelDeviceTracking\LaravelDeviceTrackingServiceProvider" --tag config
 
 ```
@@ -47,13 +45,11 @@ class User{
     //...
 }
 
-
 // call on login or when you want update and check the device informations
 // by default this function is called when the Login event is fired 
 // only with the "web" auth guard
 // if you want you can disable the detect_on_login option in the config file
 $device = \DeviceTracker::detectFindAndUpdate();
-
 
 // flag as verified for the current user
 \DeviceTracker::flagCurrentAsVerified();
@@ -63,8 +59,6 @@ $device = \DeviceTracker::detectFindAndUpdate();
 
 // flag as verified for a specific user by device uuid
 \DeviceTracker::flagAsVerifiedByUuid($device_uuid, $user_id);
-
-
 ```
 
 If you are using Session Authentication it's possible to add the middleware
@@ -73,10 +67,6 @@ If you are using Session Authentication it's possible to add the middleware
 This way, the device will also be checked for **subsequents** requests to the login request.
 **DeviceTrackerMiddleware** will store the md5(request()->ip() . $device_uuid . $user_agent ) inside the session
 so the detection will be executed again only if the hash does not match.  
-
-
-
-
 
 Following events can be emitted:
 
@@ -114,11 +104,12 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ### Security
 
-If you discover any security related issues, please email ivanomatteo@gmail.com instead of using the issue tracker.
+If you discover any security related issues, please email gerson.simao.92@gmail.com instead of using the issue tracker.
 
 ## Credits
 
 -   [Ivano Matteo](https://github.com/ivanomatteo)
+-   [Ivano Matteo](https://github.com/jeffersonsimaogoncalves)
 -   [All Contributors](../../contributors)
 
 ## License

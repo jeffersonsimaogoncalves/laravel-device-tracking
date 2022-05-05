@@ -1,11 +1,11 @@
 {
-    "name": "ivanomatteo/laravel-device-tracking",
+    "name": "jeffersonsimaogoncalves/laravel-device-tracking",
     "description": "a library that allow to track different devices used",
     "keywords": [
         "ivanomatteo",
         "laravel-device-tracking"
     ],
-    "homepage": "https://github.com/ivanomatteo/laravel-device-tracking",
+    "homepage": "https://github.com/jeffersonsimaogoncalves/laravel-device-tracking",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -13,15 +13,17 @@
             "name": "Ivano Matteo",
             "email": "ivanomatteo@gmail.com",
             "role": "Developer"
+        },
+        {
+            "name": "Jefferson Simão Gonçalves",
+            "email": "gerson.simao.92@gmail.com",
+            "role": "Developer"
         }
     ],
     "require": {
-        "php": ">=7.1",
-        "hisorange/browser-detect": "^4.2"
-    },
-    "require-dev": {
-        "orchestra/testbench": "^4.0",
-        "phpunit/phpunit": "^8.0"
+        "php": "^8.0",
+        "laravel/framework": "^9.0",
+        "hisorange/browser-detect": "^4.4"
     },
     "autoload": {
         "psr-4": {
@@ -32,10 +34,6 @@
         "psr-4": {
             "IvanoMatteo\\LaravelDeviceTracking\\Tests\\": "tests"
         }
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
     },
     "config": {
         "sort-packages": true

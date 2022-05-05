@@ -2,8 +2,7 @@
 
 namespace IvanoMatteo\LaravelDeviceTracking\Listeners;
 
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
+use DeviceTracker;
 use Illuminate\Support\Facades\Auth;
 
 class LoginListener
@@ -21,13 +20,13 @@ class LoginListener
     /**
      * Handle the event.
      *
-     * @param  object  $event
+     * @param object $event
      * @return void
      */
     public function handle($event)
     {
         if (Auth::guard('web')->check()) {
-            \DeviceTracker::detectFindAndUpdate();
+            DeviceTracker::detectFindAndUpdate();
         }
     }
 }

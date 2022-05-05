@@ -1,4 +1,5 @@
 <?php
+
 namespace IvanoMatteo\LaravelDeviceTracking;
 
 use Illuminate\Auth\Events\Login;
@@ -10,7 +11,7 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Login::class => [
             LoginListener::class,
-        ]
+        ],
     ];
 
     /**
@@ -18,7 +19,7 @@ class EventServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         parent::boot();
     }
