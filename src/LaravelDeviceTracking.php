@@ -53,9 +53,9 @@ class LaravelDeviceTracking
     /**
      * retrieve the device identifier from cookie
      *
-     * @return string
-     * */
-    public function getCookieID(): string
+     * @return string|null
+     */
+    public function getCookieID(): ?string
     {
         return Str::limit(Request::cookie(config('laravel-device-tracking.device_cookie')), 255, '');
     }
